@@ -338,7 +338,7 @@
             font-size: 1.28rem;
             background: linear-gradient(to right, var(--accent-color), transparent);
         }
-        .credentials-box {
+        .quadro-competencias {
             background: var(--secondary-color);
             color: white;
             padding: 35px;
@@ -347,20 +347,30 @@
             border-radius: 0 20px 0 20px;
         }
 
-        .credentials-box ul {
+        .titulo-quadro {
+            color: #c5a059;
+            font-size: 1.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .quadro-competencias ul {
             list-style: none;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
         }
 
-        .credentials-box li {
+        .quadro-competencias li {
             font-size: 0.95rem;
             color: var(--primary-color);
             display: flex;
             align-items: center;
         }
-        .credentials-box li::before { content: "✧ "; color: var(--accent-color); margin-right: 8px; }
+        .quadro-competencias li::before { content: "✧ "; color: var(--accent-color); margin-right: 8px; }
 
         /* SERVIÇOS */
         .services-section {
@@ -550,8 +560,8 @@
             .hero-content h1 { font-size: 2.2rem; }
             .hero-content .hero-subtitle { font-size: 1.1rem; }
             .hero-icon { width: 100%; height: auto; }
-            .credentials-box ul { grid-template-columns: 1fr; }
-            .credentials-box { box-shadow: 10px 10px 0 var(--primary-color); }
+            .quadro-competencias ul { grid-template-columns: 1fr; }
+            .quadro-competencias { box-shadow: 10px 10px 0 var(--accent-color); }
             .hero-content h1 { font-size: 1.8rem !important; }
         }
 
@@ -629,7 +639,8 @@
 
         <div class="nav-right">
             <a href="https://wa.me/5521996628126" onclick="trackWhatsAppClick();" target="_blank" class="cta-header-gold">Agendar Consulta</a>
-            <a href="https://instagram.com/paula.apostulo" target="_blank">
+            <a href="https://instagram.com/paula.apostulo" target="_blank"
+            onclick="trackInstagramClick();">
                 <img src="logo-instagram.jpg" class="instagram-icon-top">
             </a>
         </div>
@@ -667,16 +678,16 @@
                         "Minha jornada é a prova de que, da exaustão, pode nascer um novo propósito: devolver o prazer e a liberdade às mulheres."
                     </div>
                     <p class="about-paragraph">Paulista de nascimento e carioca de coração há 6 anos, dediquei 18 anos da minha vida à linha de frente da enfermagem. Foram anos de plantões intensos em UTI, onde a responsabilidade era o meu guia diário.</p>
-                    <p class="about-paragraph">A rotina de cuidado extremo me levou ao burnout, e foi nesse momento que percebi que cuidava de todos, menos de mim mesma. A Pós-graduação em Estética foi o que reacendeu minha paixão.</p>
+                    <p class="about-paragraph">A rotina de cuidado extremo me levou ao burnout, e foi nesse momento que percebi que cuidava de todos, menos de mim mesma. A Enfermagem Estética e 4 pós-graduações foi o que reacendeu minha paixão.</p>
                     <p class="about-paragraph">Hoje, minha verdadeira vocação é a <strong>Estética Facial e Íntima Feminina</strong>. Ajudo mulheres a recuperarem a liberdade, o prazer e a reconciliação com o próprio corpo.</p>
-                    <div class="credentials-box">
+                    <div class="quadro-competencias">
+                        <h3 class="titulo-quadro">Especialidades</h3>
                         <ul>
                             <li>Estética Íntima</li>
-                            <li>Saúde da Mulher</li>
-                            <li>Sexualidade Humana</li>
                             <li>Estética Facial</li>
+                            <li>Sexualidade Humana</li>
+                            <li>Saúde da Mulher</li>
                             <li>Atendimento Premium</li>
-                            <li>Campo Grande, RJ</li>
                         </ul>
                     </div>
                 </div>
@@ -699,7 +710,7 @@
                     <div class="intima-highlight">
                         <h4>Gostaria de conhecer os benefícios da estética íntima feminina?</h4>
                         <p>Descubra como os tratamentos podem transformar sua confiança.</p>
-                        <a href="https://wa.me/5521996628126?text=Olá%20Dra.%20Paula!%20Gostaria%20de%20informações%20sobre%20os%20procedimentos%20de%20Estética%20Íntima." class="btn-whatsapp-card" onclick="trackWhatsAppClick();" target="_blank">Fale Conosco e Agende!</a>
+                        <a href="https://wa.me/5521996628126?text=Olá%20Dra.%20Paula!%20Vi%20seu%20site.%20E%20gostaria%20de%20informações%20sobre%20os%20procedimentos%20de%20Estética%20Íntima." class="btn-whatsapp-card" onclick="trackWhatsAppClick();" target="_blank">Fale Conosco e Agende!</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -712,7 +723,7 @@
                         <li>Tratamento de Rugas e Linhas</li>
                         <li>Aplicação de Enzimas</li>
                     </ul>
-                    <a href="https://wa.me/5521996628126?text=Olá%20Dra.%20Paula!%20Gostaria%20de%20saber%20mais%20sobre%20os%20procedimentos%20Faciais." class="btn-whatsapp-card" style="background:transparent; border: 2px solid var(--accent-color);" onclick="trackWhatsAppClick();" target="_blank">Consultar Procedimentos</a>
+                    <a href="https://wa.me/5521996628126?text=Olá%20Dra.%20Paula!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20procedimentos%20Faciais." class="btn-whatsapp-card" style="background:transparent; border: 2px solid var(--accent-color);" onclick="trackWhatsAppClick();" target="_blank">Consultar Procedimentos</a>
                 </div>
             </div>
         </section>
@@ -738,14 +749,14 @@
         <section id="contato" class="contact-section">
             <h2 class="services-main-title" style="color: var(--secondary-color);">Onde Estamos</h2>
             <div class="contact-grid">
-                <div class="map-container">
+                <div class="map-container" onclick="trackWhatsAppClick();">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.248238128456!2d-43.56706402377319!3d-22.91192313835694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9be654d3b55815%3A0x69174c5a62ff6f5f!2sDra.%20Paula%20Ap%C3%B3stulo%20-%20Est%C3%A9tica%20%C3%8Dntima%20e%20Facial!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
                 <div class="contact-info-box">
                     <h3>Atendimento Premium</h3>
                     <ul class="contact-details">
-                        <li><strong>Endereço:</strong> Rua Prof. Castilho, 431 <br>Campo Grande, <br>Rio de Janeiro - RJ</li>
+                        <li><strong>Endereço:</strong>Rua Prof. Castilho, 431 <br>Campo Grande, <br>Rio de Janeiro - RJ</li>
                         <li><strong>WhatsApp:</strong> (21) 99662-8126</li>
                         <li><strong>Horários:</strong> Seg a Sex: 10:00 às 19:00 <br>Sábados: 09:00 às 13:00</li>
                     </ul>
@@ -811,12 +822,18 @@
         }
     });
 </script>
-    <a href="https://wa.me/5521996628126?text=Olá%20Dra.%20Paula!%20Gostaria%20de%20tirar%20uma%20dúvida." class="whatsapp-float" onclick="trackWhatsAppClick();" target="_blank" aria-label="Falar pelo WhatsApp">
+    <a href="https://wa.me/5521996628126?text=Olá%20Dra.%20Paula!Vi%20seu%20site%20e%20gostaria%20de%20tirar%20dúvidas." class="whatsapp-float" onclick="trackWhatsAppClick();" target="_blank" aria-label="Falar pelo WhatsApp">
     <svg width="35" height="35" viewBox="0 0 448 512" fill="#fff" xmlns="http://www.w3.org/2000/svg">
         <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.1 0-65.6-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.6 5.6-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
     </svg>
     </a>
-    <script>
+   
+    <div id="politica" style="padding: 30px 10%; background-color: #fafafa; color: #999; font-size: 0.75rem; line-height: 1.5; text-align: justify;">
+    <div style="max-width: 900px; margin: 0 auto;">
+        <p><strong>Informações de Privacidade:</strong> Este site utiliza a Google Tag para monitorar o desempenho de anúncios no Google Ads através de cookies anônimos. Ao navegar e utilizar o botão de contato, você está ciente de que será redirecionado ao WhatsApp para atendimento direto com a Dra. Paula Apóstulo. Os dados fornecidos no chat são utilizados exclusivamente para fins de agendamento e saúde, em conformidade com a LGPD. Você pode gerenciar ou desativar cookies diretamente nas configurações do seu navegador.</p>
+    </div>
+</div>
+ <script>
     function trackWhatsAppClick() {
         gtag('event', 'conversion', {
             'send_to': 'AW-11429284607/p_doCJbp2NwbEP-V9Mkq',
@@ -826,11 +843,33 @@
         });
         return false;
     }
+    function trackInstagramClick() {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-11429284607/JFssCOypz-AbEP-V9Mkq',
+            'event_callback': function() {
+                console.log('Conversão Instagram enviada');
+            }
+        });
+        return false;
+    }
     </script>
-    <div id="politica" style="padding: 30px 10%; background-color: #fafafa; color: #999; font-size: 0.75rem; line-height: 1.5; text-align: justify;">
-    <div style="max-width: 900px; margin: 0 auto;">
-        <p><strong>Informações de Privacidade:</strong> Este site utiliza a Google Tag para monitorar o desempenho de anúncios no Google Ads através de cookies anônimos. Ao navegar e utilizar o botão de contato, você está ciente de que será redirecionado ao WhatsApp para atendimento direto com a Dra. Paula Apóstulo. Os dados fornecidos no chat são utilizados exclusivamente para fins de agendamento e saúde, em conformidade com a LGPD. Você pode gerenciar ou desativar cookies diretamente nas configurações do seu navegador.</p>
-    </div>
-</div>
 </body>
 </html>
+
+
+<!-- Event snippet for Clique Instagram conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-11429284607/JFssCOypz-AbEP-V9Mkq',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
