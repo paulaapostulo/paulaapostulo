@@ -12,21 +12,27 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dra. Paula Apóstulo | Estética Íntima e Facial em Campo Grande, RJ</title>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" href="favicon.ico">
     
-    <meta name="description" content="Especialista em Ninfoplastia sem cortes, Bioestimuladores e Rejuvenescimento Íntimo em Campo Grande, RJ. Atendimento premium e resultados naturais.">
-    <meta name="keywords" content="Ninfoplastia Campo Grande RJ, Estética Íntima Feminina, Harmonização Facial, Dra Paula Apostulo, Aplicação de Enzima, Rejuvenescimento Facial RJ">
+    <title>Estética Íntima e Facial em Campo Grande, RJ | Dra. Paula Apóstulo</title>
+    <meta name="description" 
+    content="Clínica especializada em estética íntima feminina e facial em Campo Grande, RJ. Ninfoplastia, rejuvenescimento íntimo, bioestimuladores e muito mais. Agende pelo WhatsApp. Atendimento premium e resultados naturais.">
 
-    <meta property="og:title" content="Dra. Paula Apóstulo | Estética de Alta Performance">
-    <meta property="og:description" content="Especialista em Estética Facial e Íntima. Agende sua avaliação em Campo Grande, RJ.">
+    <meta name="keywords" 
+    content="Ninfoplastia Campo Grande RJ, Estética Íntima Feminina, Harmonização Facial, Dra Paula Apostulo, Aplicação de Enzima, Rejuvenescimento Facial RJ">
+
+    <meta property="og:title" 
+    content="Estética Íntima e Facial em Campo Grande, RJ | Dra. Paula Apóstulo">
+    <meta property="og:description" 
+    content="Ninfoplastia, rejuvenescimento íntimo e tratamentos faciais em Campo Grande, RJ. Agende sua avaliação com a Dra. Paula Apóstulo.">
     <meta property="og:image" content="logo-paula.jpg">
     <meta property="og:url" content="https://paulaapostulo.com.br">
     <meta property="og:type" content="website">
+    <meta name="google-site-verification" content="cp32UGkyawYVn5N4NoJGeV0bQtaOgmHm8WDgdZb3grA" />
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -434,7 +440,106 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             font-size: 1rem;
         }
-        .treatment-list li::before { content: "✦ "; color: var(--accent-color); }
+        
+        /* ── Accordion de tratamentos ── */
+        .treatment-list--detailed { width: 100%; }
+
+        .treatment-list--detailed li {
+            border-bottom: 0.5px solid rgba(197, 179, 88, 0.3);
+            padding: 0;
+        }
+        .treatment-list--detailed li::before { display: none; }
+
+        .treatment-btn {
+            width: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 16px 8px;          /* mais espaço lateral no toque */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            text-align: left;
+            border-radius: 4px;
+            transition: background 0.2s;
+            -webkit-tap-highlight-color: transparent; /* remove flash azul no Android */
+            touch-action: manipulation;               /* elimina delay de 300ms no mobile */
+        }
+        .treatment-btn:hover  { background: rgba(255,255,255,0.04); }
+        .treatment-btn:active { background: rgba(255,255,255,0.08); } /* feedback tátil */
+
+        .treatment-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s;
+            line-height: 1.4;
+        }
+        .treatment-name::before {
+            content: "✦";
+            color: var(--accent-color);
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+        .treatment-btn:hover .treatment-name,
+        .treatment-list--detailed li.open .treatment-name { color: var(--accent-color); }
+
+        .treatment-chevron {
+            flex-shrink: 0;
+            min-width: 24px;            /* área mínima de toque */
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.35s ease;
+            opacity: 0.9;
+        }
+        /* triângulo CSS dentro do container de toque */
+        .treatment-chevron::after {
+            content: "";
+            display: block;
+            width: 0; height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid var(--accent-color);
+        }
+
+        /* Corpo recolhido — texto sempre no DOM para SEO */
+        .treatment-desc-wrap {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.4s ease;
+        }
+        .treatment-desc-inner {
+            overflow: hidden;
+        }
+
+        .treatment-desc {
+            font-size: 0.875rem;
+            color: rgba(232, 212, 215, 0.75);
+            line-height: 1.65;
+            padding: 0 1.5px 16px 22px;
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto; /* Safari/iOS */
+        }
+
+        /* Estado aberto */
+        .treatment-list--detailed li.open .treatment-desc-wrap { grid-template-rows: 1fr; }
+        .treatment-list--detailed li.open .treatment-chevron   { transform: rotate(180deg); }
+
+        /* Mobile: fonte ligeiramente menor para não quebrar linha no nome */
+        @media (max-width: 768px) {
+            .treatment-btn  { padding: 18px 6px; } /* área de toque maior no mobile */
+            .treatment-name { font-size: 0.93rem; }
+            .treatment-desc { font-size: 0.85rem; padding-bottom: 14px; }
+        }
+
         .btn-whatsapp-card {
             display: inline-block;
             background: linear-gradient(45deg, var(--accent-color), #d4c062);
@@ -696,36 +801,141 @@
         </section>
 
         <section id="servicos" class="services-section">
-            <h2 class="services-main-title">Serviços e Tratamentos</h2>
+            <h2 class="services-main-title">Serviços e Tratamentos em Campo Grande, RJ</h2>
             <div class="services-container">
+
+                <!-- CARD: ESTÉTICA ÍNTIMA -->
                 <div class="service-card">
-                    <h3 class="card-title">Estética Íntima</h3>
-                    <ul class="treatment-list">
-                        <li>Ninfoplastia Sem Cortes</li>
-                        <li>Rejuvenescimento Íntimo</li>
-                        <li>Estreitamento de Canal</li>
-                        <li>Bioestimulador</li>
-                        <li>Preenchimento de Glúteo</li>
-                        <li>Tratamento de Flacidez</li>
+                    <h3 class="card-title">Estética Íntima Feminina</h3>
+
+                    <ul class="treatment-list treatment-list--detailed">
+
+                        <li>
+                            <button class="treatment-btn" onclick="toggleTreatment(this)" aria-expanded="false">
+                                <span class="treatment-name">Ninfomodelação Sem Cirurgia</span>
+                                <span class="treatment-chevron" aria-hidden="true"></span>
+                            </button>
+                            <div class="treatment-desc-wrap"><div class="treatment-desc-inner">
+                                <p class="treatment-desc">Conhecida também como Ninfoplastia sem cirurgia, é a remodelação estética dos pequenos lábios sem cirurgia e sem cortes. Ideal para mulheres que desejam recuperar a confiança e a autoestima na própria intimidade. Com recuperação rápida, resultados naturais e duradouros. 
+                                    - Indicação:</br>
+                                     ✦ Desconforto na relação; </br>
+                                     ✦ Correção de assimetrias; </br>
+                                     ✦ Excesso de pequenos lábios; </br>
+                                     ✦ Desconforto com roupas apertadas; </br>
+                                     ✦ Mulheres que não desejam cirurgia; </br>
+                                     </p>
+                            </div></div>
+                        </li>
+
+                        <li>
+                            <button class="treatment-btn" onclick="toggleTreatment(this)" aria-expanded="false">
+                                <span class="treatment-name">Rejuvenescimento Íntimo</span>
+                                <span class="treatment-chevron" aria-hidden="true"></span>
+                            </button>
+                            <div class="treatment-desc-wrap"><div class="treatment-desc-inner">
+                                <p class="treatment-desc">É uma associação de técnicas que promovem a melhora da firmeza, hidratação, recuperação de volume e aspecto da sua região íntima. Estimula a produção de colágeno, devolvendo firmeza, elasticidade e vitalidade à pele — com impacto direto na autoestima, no bem-estar íntimo e na qualidade de vida.</p>
+                            </div></div>
+                        </li>
+
+                        <li>
+                            <button class="treatment-btn" onclick="toggleTreatment(this)" aria-expanded="false">
+                                <span class="treatment-name">Estreitamento de Canal Vaginal</span>
+                                <span class="treatment-chevron" aria-hidden="true"></span>
+                            </button>
+                            <div class="treatment-desc-wrap"><div class="treatment-desc-inner">
+                                <p class="treatment-desc">Protocolo indicado para mulheres que perceberam alterações na tonicidade vaginal após o parto ou com o avanço da idade. O tratamento promove contração tecidual segura e progressiva, com melhora da sensibilidade, da firmeza e do bem-estar íntimo — sem cirurgia.</p>
+                            </div></div>
+                        </li>
+
+                        <li>
+                            <button class="treatment-btn" onclick="toggleTreatment(this)" aria-expanded="false">
+                                <span class="treatment-name">Bioestimulador de Colágeno</span>
+                                <span class="treatment-chevron" aria-hidden="true"></span>
+                            </button>
+                            <div class="treatment-desc-wrap"><div class="treatment-desc-inner">
+                                <p class="treatment-desc">Indicado para tratar flacidez e perda de volume na região íntima feminina. Para mulheres em qualquer fase da vida que buscam uma pele mais hidratada, firme e reposição de volume de grandes lábios — sem cirurgia, sem internação e com mínimo tempo de recuperação.</p>
+                            </div></div>
+                        </li>
+
+                        <li>
+                            <button class="treatment-btn" onclick="toggleTreatment(this)" aria-expanded="false">
+                                <span class="treatment-name">Harmonização Glútea</span>
+                                <span class="treatment-chevron" aria-hidden="true"></span>
+                            </button>
+                            <div class="treatment-desc-wrap"><div class="treatment-desc-inner">
+                                <p class="treatment-desc">Procedimento realizado para nutrição de tecido, preenchimento com ácido hialurônico e bioestimuladores de colágeno para definir o contorno, adicionar volume, reduzir celulite e corrigir assimetrias dos glúteos. Sem necessidade de cirurgia ou anestesia geral, com resultados visíveis a partir das primeiras semanas.</p>
+                            </div></div>
+                        </li>
                     </ul>
+
                     <div class="intima-highlight">
-                        <h4>Gostaria de conhecer os benefícios da estética íntima feminina?</h4>
-                        <p>Descubra como os tratamentos podem transformar sua confiança.</p>
+                        <h4>Ainda tem dúvidas sobre a estética íntima?</h4>
+                        <p>Os procedimentos são seguros, discretos e realizados em ambiente acolhedor em Campo Grande, RJ. Agende uma avaliação sem compromisso e tire todas as suas dúvidas com a Dra. Paula.</p>
                         <a href="https://wa.me/5521996628126?text=Olá%20Dra.%20Paula!%20Vi%20seu%20site.%20E%20gostaria%20de%20informações%20sobre%20os%20procedimentos%20de%20Estética%20Íntima." class="btn-whatsapp-card" onclick="trackWhatsAppClick();" target="_blank">Fale Conosco e Agende!</a>
                     </div>
                 </div>
+
+                <!-- CARD: ESTÉTICA FACIAL -->
                 <div class="service-card">
                     <h3 class="card-title">Estética Facial</h3>
-                    <ul class="treatment-list">
-                        <li>Toxina Botulínica</li>
-                        <li>Fios de PDO</li>
-                        <li>Rejuvenescimento Global</li>
-                        <li>Preenchimento Labial</li>
-                        <li>Tratamento de Rugas e Linhas</li>
-                        <li>Aplicação de Enzimas</li>
+
+                    <ul class="treatment-list treatment-list--detailed">
+
+                        <li>
+                            <button class="treatment-btn" onclick="toggleTreatment(this)" aria-expanded="false">
+                                <span class="treatment-name">Suavização de Rugas e Expressão</span>
+                                <span class="treatment-chevron" aria-hidden="true"></span>
+                            </button>
+                            <div class="treatment-desc-wrap"><div class="treatment-desc-inner">
+                                <p class="treatment-desc">Aplicação precisa de toxina botulínica para suavizar linhas de expressão na testa, entre os olhos e ao redor dos olhos. O resultado é um rosto descansado e natural — sem aspecto artificial. Efeito visível na primeira semana. Ideal para quem busca rejuvenescimento facial.</p>
+                            </div></div>
+                        </li>
+
+                        <li>
+                            <button class="treatment-btn" onclick="toggleTreatment(this)" aria-expanded="false">
+                                <span class="treatment-name">Rejuvenescimento Facial</span>
+                                <span class="treatment-chevron" aria-hidden="true"></span>
+                            </button>
+                            <div class="treatment-desc-wrap"><div class="treatment-desc-inner">
+                                <p class="treatment-desc">Protocolo completo de rejuvenescimento facial que combina bioestimuladores de colágeno e aplicação de ácido hialurônico e outros ativos para tratar simultaneamente a hidratação da pele, flacidez e perda de volume. Uma abordagem integrada para quem busca resultados amplos, harmoniosos e mantendo a naturalidade.</p>
+                            </div></div>
+                        </li>
+
+                        <li>
+                            <button class="treatment-btn" onclick="toggleTreatment(this)" aria-expanded="false">
+                                <span class="treatment-name">Preenchimento Labial</span>
+                                <span class="treatment-chevron" aria-hidden="true"></span>
+                            </button>
+                            <div class="treatment-desc-wrap"><div class="treatment-desc-inner">
+                                <p class="treatment-desc">Aplicação de ácido hialurônico nos lábios para definir o contorno, adicionar volume e suavizar linhas ao redor da boca. O procedimento é totalmente personalizado para respeitar a proporção natural de cada rosto — resultado harmonioso, elegante e sem exageros.</p>
+                            </div></div>
+                        </li>
+
+                        <li>
+                            <button class="treatment-btn" onclick="toggleTreatment(this)" aria-expanded="false">
+                                <span class="treatment-name">Tratamento de Marcas de Expressão</span>
+                                <span class="treatment-chevron" aria-hidden="true"></span>
+                            </button>
+                            <div class="treatment-desc-wrap"><div class="treatment-desc-inner">
+                                <p class="treatment-desc">Tratamento de “bigode chinês” (nasolabial) e linha de marionete - utilizando preenchimento com ácido hialurônico, bioestimuladores de colágeno ou fios de PDO lisos, que ajudam na produção de colágeno e a reposição volume. Cada plano é montado individualmente, respeitando a anatomia e os objetivos estéticos de cada paciente."</p>
+                            </div></div>
+                        </li>
+
+                        <li>
+                            <button class="treatment-btn" onclick="toggleTreatment(this)" aria-expanded="false">
+                                <span class="treatment-name">Aplicação de Ativos Redutores de Gordura</span>
+                                <span class="treatment-chevron" aria-hidden="true"></span>
+                            </button>
+                            <div class="treatment-desc-wrap"><div class="treatment-desc-inner">
+                                <p class="treatment-desc">Tratamento com ativos lipolíticos ou enzimas para reduzir gordura localizada em regiões específicas do corpo. Procedimento realizado com o mínimo desconforto.</p>
+                            </div></div>
+                        </li>
+
                     </ul>
+
                     <a href="https://wa.me/5521996628126?text=Olá%20Dra.%20Paula!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20procedimentos%20Faciais." class="btn-whatsapp-card" style="background:transparent; border: 2px solid var(--accent-color);" onclick="trackWhatsAppClick();" target="_blank">Consultar Procedimentos</a>
                 </div>
+
             </div>
         </section>
 
@@ -843,12 +1053,23 @@
         });
         return false;
     }
+
+    function toggleTreatment(btn) {
+        const li = btn.closest('li');
+        const isOpen = li.classList.contains('open');
+        // Fecha todos do mesmo card
+        btn.closest('ul').querySelectorAll('li').forEach(function(item) {
+            item.classList.remove('open');
+            item.querySelector('.treatment-btn').setAttribute('aria-expanded', 'false');
+        });
+        // Abre o clicado (se estava fechado)
+        if (!isOpen) {
+            li.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+        }
+    }
     
     </script>
-</body>
-</html>
-
-
 <!-- Event snippet for Clique Instagram conversion page
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
@@ -866,6 +1087,5 @@ function gtag_report_conversion(url) {
   return false; // Isso impede o conflito que citei
 }
 </script>
-
-
-
+</body>
+</html>
