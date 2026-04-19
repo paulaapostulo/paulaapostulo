@@ -29,9 +29,10 @@
     content="Estética Íntima e Facial em Campo Grande, RJ | Dra. Paula Apóstulo">
     <meta property="og:description" 
     content="Ninfoplastia, rejuvenescimento íntimo e tratamentos faciais em Campo Grande, RJ. Agende sua avaliação com a Dra. Paula Apóstulo.">
-    <meta property="og:image" content="logo-paula.jpg">
+    <meta property="og:image" content="https://paulaapostulo.com.br/logo-paula.jpg">
     <meta property="og:url" content="https://paulaapostulo.com.br">
     <meta property="og:type" content="website">
+    <link rel="canonical" href="https://paulaapostulo.com.br">
     <meta name="google-site-verification" content="cp32UGkyawYVn5N4NoJGeV0bQtaOgmHm8WDgdZb3grA" />
     <script type="application/ld+json">
         {
@@ -747,7 +748,7 @@
             class="cta-header-gold">Agendar Consulta</a>
             <a href="https://instagram.com/paula.apostulo" target="_blank"
             onclick="return gtag_report_conversion('https://instagram.com/paula.apostulo');">
-                <img src="logo-instagram.jpg" class="instagram-icon-top">
+                <img src="logo-instagram.jpg" alt="Instagram Dra. Paula Apóstulo" class="instagram-icon-top">
             </a>
         </div>
 
@@ -766,7 +767,7 @@
             <p>Bem-vinda(o)!</p>
             <h1>Dra Paula Apóstulo</h1>
             <p class="hero-subtitle">Estética Facial e Íntima Feminina<br>em Campo Grande, RJ</p>
-            <img src="icone-hero.jpg" class="hero-icon">
+            <img src="icone-hero.jpg" alt="Estética Íntima e Facial em Campo Grande RJ" class="hero-icon">
         </div>
     </header>
 
@@ -917,7 +918,7 @@
                                 <span class="treatment-chevron" aria-hidden="true"></span>
                             </button>
                             <div class="treatment-desc-wrap"><div class="treatment-desc-inner">
-                                <p class="treatment-desc">Tratamento de “bigode chinês” (nasolabial) e linha de marionete - utilizando preenchimento com ácido hialurônico, bioestimuladores de colágeno ou fios de PDO lisos, que ajudam na produção de colágeno e a reposição volume. Cada plano é montado individualmente, respeitando a anatomia e os objetivos estéticos de cada paciente."</p>
+                                <p class="treatment-desc">Tratamento de “bigode chinês” (nasolabial) e linha de marionete - utilizando preenchimento com ácido hialurônico, bioestimuladores de colágeno ou fios de PDO lisos, que ajudam na produção de colágeno e a reposição de volume. Cada plano é montado individualmente, respeitando a anatomia e os objetivos estéticos de cada paciente.</p>
                             </div></div>
                         </li>
 
@@ -978,7 +979,7 @@
 
     <footer class="footer">
         <img src="logo-paula.jpg" class="footer-logo" alt="Logo Dra Paula Apóstulo">
-        <p>© 2025 Dra. Paula Apóstulo. Todos os direitos reservados.</p>
+        <p>© <span id="ano"></span> Dra. Paula Apóstulo. Todos os direitos reservados.</p>
         <p style="font-size: 0.8rem; margin-top: 10px; color: var(--primary-color);">Estética Facial e Íntima Feminina  <br>em Campo Grande, RJ</p>
         <p style="font-size: 0.7rem;">
         <a href="#politica" style="color: #bbb; text-decoration: none;">Política de Privacidade</a>
@@ -1044,6 +1045,8 @@
     </div>
 </div>
  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
     function trackWhatsAppClick() {
         gtag('event', 'conversion', {
             'send_to': 'AW-11429284607/p_doCJbp2NwbEP-V9Mkq',
