@@ -555,6 +555,221 @@
         }
         .btn-whatsapp-card:hover { transform: scale(1.05); }
 
+        /* ── FAQ ── */
+        .faq-section {
+            background: linear-gradient(160deg, #1e1020 0%, #2a1628 60%, #1a0e1e 100%);
+            padding: 60px 5%;
+        }
+
+        /* wave de entrada: ameixa → quase-preto */
+        .wave-services-to-faq {
+            display: block; width: 100%; height: 48px;
+            background: var(--secondary-color);
+            clip-path: ellipse(55% 100% at 50% 0%);
+            margin-bottom: -2px;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 44px;
+        }
+
+        .faq-section-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .faq-section h2 {
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            font-weight: 300;
+            color: var(--primary-color);
+            line-height: 1.35;
+            margin-bottom: 10px;
+        }
+
+        .faq-section h2 strong {
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .faq-section .faq-intro {
+            font-size: 0.88rem;
+            color: rgba(232, 212, 215, 0.5);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* subsection label */
+        .faq-subsection { max-width: 780px; margin: 0 auto 32px; }
+
+        .faq-subsection-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(197, 179, 88, 0.25);
+        }
+        .faq-subsection-title::before { content: "✦"; font-size: 0.6rem; }
+
+        /* FAQ items */
+        .faq-list { display: flex; flex-direction: column; gap: 5px; }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.04);
+            border: 0.5px solid rgba(197, 179, 88, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+        .faq-item.open { border-color: rgba(197, 179, 88, 0.55); }
+
+        .faq-btn {
+            width: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            text-align: left;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            transition: background 0.2s;
+        }
+        .faq-btn:hover  { background: rgba(255, 255, 255, 0.03); }
+        .faq-btn:active { background: rgba(255, 255, 255, 0.07); }
+
+        .faq-question {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            line-height: 1.4;
+            transition: color 0.2s;
+        }
+        .faq-btn:hover .faq-question,
+        .faq-item.open  .faq-question { color: var(--accent-color); }
+
+        .faq-chevron {
+            flex-shrink: 0;
+            width: 24px; height: 24px;
+            border-radius: 50%;
+            border: 1px solid rgba(197, 179, 88, 0.4);
+            display: flex; align-items: center; justify-content: center;
+            transition: transform 0.35s ease, background 0.2s;
+        }
+        .faq-chevron::after {
+            content: "";
+            width: 0; height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 5px solid var(--accent-color);
+            margin-top: 2px;
+        }
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+            background: rgba(197, 179, 88, 0.1);
+        }
+
+        /* accordion body */
+        .faq-answer-wrap {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.38s ease;
+        }
+        .faq-answer-inner { overflow: hidden; }
+        .faq-item.open .faq-answer-wrap { grid-template-rows: 1fr; }
+
+        .faq-answer {
+            font-size: 0.86rem;
+            color: rgba(232, 212, 215, 0.72);
+            line-height: 1.7;
+            padding: 0 18px 16px 18px;
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+        .faq-answer strong { color: var(--primary-color); font-weight: 600; }
+        .faq-answer ul { margin: 8px 0 4px 18px; display: flex; flex-direction: column; gap: 3px; }
+        .faq-answer ul li::marker { color: var(--accent-color); }
+
+        /* CTA do FAQ */
+        .faq-cta-block {
+            max-width: 780px;
+            margin: 36px auto 0;
+            background: rgba(88, 55, 79, 0.35);
+            border: 1px solid rgba(197, 179, 88, 0.3);
+            border-radius: 14px;
+            padding: 30px 26px;
+            text-align: center;
+        }
+        .faq-cta-block h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 6px;
+        }
+        .faq-cta-block p {
+            font-size: 0.84rem;
+            color: rgba(232, 212, 215, 0.55);
+            margin-bottom: 20px;
+        }
+        .faq-cta-btns {
+            display: flex; gap: 10px;
+            justify-content: center; flex-wrap: wrap;
+        }
+        .btn-faq-primary {
+            background: linear-gradient(45deg, var(--accent-color), #d4c062);
+            color: #1e1020;
+            padding: 12px 26px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.84rem;
+            box-shadow: 0 4px 14px rgba(197, 179, 88, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-faq-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(197,179,88,0.4); }
+        .btn-faq-outline {
+            background: transparent;
+            color: var(--accent-color);
+            padding: 12px 26px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.84rem;
+            border: 2px solid var(--accent-color);
+            transition: background 0.2s;
+        }
+        .btn-faq-outline:hover { background: rgba(197, 179, 88, 0.1); }
+
+        /* wave de saída: quase-preto → branco rosado */
+        .wave-faq-to-depo {
+            display: block; width: 100%; height: 48px;
+            overflow: hidden; line-height: 0;
+        }
+
+        @media (max-width: 768px) {
+            .faq-answer { font-size: 0.83rem; }
+            .faq-question { font-size: 0.88rem; }
+            .faq-btn { padding: 18px 14px; }
+        }
+
         /* DEPOIMENTOS */
         .testimonials-section {
             padding: 33px 5%;
@@ -728,6 +943,7 @@
             <ul class="nav-links">
                 <li><a href="#sobre">sobre</a></li>
                 <li><a href="#servicos">serviços</a></li>
+                <li><a href="#faq">dúvidas</a></li>
                 <li><a href="#depoimentos">depoimentos</a></li>
                 <li><a href="#contato">contato</a></li>
             </ul>
@@ -756,6 +972,7 @@
             <ul class="nav-links">
                 <li><a href="#sobre">sobre</a></li>
                 <li><a href="#servicos">serviços</a></li>
+                <li><a href="#faq">dúvidas</a></li>
                 <li><a href="#depoimentos">depoimentos</a></li>
                 <li><a href="#contato">contato</a></li>
             </ul>
@@ -940,6 +1157,204 @@
             </div>
         </section>
 
+        <!-- wave: ameixa (serviços) → quase-preto (faq) -->
+        <svg viewBox="0 0 1200 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:50px;margin-bottom:-2px;">
+            <path d="M0,0 L1200,0 L1200,50 C900,10 300,50 0,10 Z" fill="#58374F"/>
+            <path d="M0,10 C300,50 900,10 1200,50 L1200,50 L0,50 Z" fill="#1e1020"/>
+        </svg>
+
+        <!-- ══ SEÇÃO FAQ ══ -->
+        <section id="faq" class="faq-section">
+
+            <div class="faq-header">
+                <span class="faq-section-tag">Dúvidas Frequentes</span>
+                <h2>Suas perguntas,<br><strong>respondidas com cuidado</strong></h2>
+                <p class="faq-intro">Reunimos as dúvidas mais comuns para que você chegue à sua consulta com mais segurança e tranquilidade.</p>
+            </div>
+
+            <!-- BLOCO 1: ESTÉTICA ÍNTIMA -->
+            <div class="faq-subsection">
+                <div class="faq-subsection-title">Ninfomodelação & Estética Íntima Feminina</div>
+                <ul class="faq-list">
+
+                    <li class="faq-item">
+                        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+                            <span class="faq-question">O que é a Ninfomodelação sem cirurgia?</span>
+                            <span class="faq-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                            <div class="faq-answer">A <strong>Ninfomodelação sem cirurgia</strong> é um tratamento inovador de <strong>estética íntima feminina</strong> que utiliza tecnologias como radiofrequência, ultrassom de alta frequência e ondas triangulares para reduzir o excesso dos pequenos lábios — sem cortes, sem bisturi e sem internação.<br><br>O procedimento estimula a retração natural da pele, remodelando o contorno da região íntima com segurança e resultado progressivo. Também pode ser associado à <strong>Capuzplastia sem cirurgia</strong>, que reduz o excesso de pele do capuz clitoriano. Em muitos casos, ambas as correções são realizadas na mesma sessão.</div>
+                        </div></div>
+                    </li>
+
+                    <li class="faq-item">
+                        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+                            <span class="faq-question">Quantas sessões são necessárias?</span>
+                            <span class="faq-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                            <div class="faq-answer">Na maioria dos casos, a <strong>Ninfomodelação sem cortes</strong> é realizada em uma única sessão, com resultados visíveis já nas primeiras semanas. Dependendo do grau de hipertrofia dos pequenos lábios, pode ser indicado um refinamento complementar para otimizar a simetria e o acabamento final.</div>
+                        </div></div>
+                    </li>
+
+                    <li class="faq-item">
+                        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+                            <span class="faq-question">Qual o tempo de recuperação?</span>
+                            <span class="faq-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                            <div class="faq-answer">A recuperação varia conforme o procedimento realizado:<br><br>
+                                <ul>
+                                    <li><strong>Bioestimuladores e hidratação íntima:</strong> repouso íntimo de 3 a 7 dias</li>
+                                    <li><strong>Ninfomodelação sem cirurgia:</strong> em média de 20 a 30 dias</li>
+                                </ul>
+                                <br>Durante a consulta de avaliação, a Dra. Paula orienta detalhadamente sobre o protocolo e todos os cuidados necessários para o seu caso.</div>
+                        </div></div>
+                    </li>
+
+                    <li class="faq-item">
+                        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+                            <span class="faq-question">Quanto tempo preciso ficar sem relações após o procedimento?</span>
+                            <span class="faq-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                            <div class="faq-answer">O tempo de abstinência sexual varia conforme o tratamento:<br><br>
+                                <ul>
+                                    <li><strong>Procedimentos injetáveis:</strong> 3 a 7 dias</li>
+                                    <li><strong>Ninfomodelação sem cirurgia:</strong> geralmente de 20 a 30 dias</li>
+                                </ul>
+                                <br>O período exato é sempre definido de forma individual, para garantir uma recuperação segura e um resultado de excelência.</div>
+                        </div></div>
+                    </li>
+
+                    <li class="faq-item">
+                        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+                            <span class="faq-question">O procedimento dói?</span>
+                            <span class="faq-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                            <div class="faq-answer">A Ninfomodelação é realizada com <strong>anestesia local</strong>, proporcionando conforto durante toda a sessão. Após o tratamento, é comum ocorrer um leve inchaço e sensibilidade temporária na região — tudo controlado com medicações e orientações específicas da Dra. Paula.</div>
+                        </div></div>
+                    </li>
+
+                    <li class="faq-item">
+                        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+                            <span class="faq-question">A partir de qual idade posso realizar os procedimentos íntimos?</span>
+                            <span class="faq-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                            <div class="faq-answer">Os <strong>tratamentos de estética íntima feminina</strong> são indicados para mulheres adultas que desejam tratar desconfortos estéticos ou funcionais causados por:
+                                <ul>
+                                    <li>Hipertrofia dos pequenos lábios</li>
+                                    <li>Flacidez vaginal</li>
+                                    <li>Ressecamento íntimo</li>
+                                    <li>Alterações hormonais</li>
+                                    <li>Pós-parto</li>
+                                    <li>Envelhecimento natural</li>
+                                </ul>
+                                <br>Não existe idade máxima — a indicação é sempre avaliada individualmente, considerando a saúde geral e os objetivos de cada paciente.</div>
+                        </div></div>
+                    </li>
+
+                    <li class="faq-item">
+                        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+                            <span class="faq-question">O que é o Rejuvenescimento Íntimo Feminino?</span>
+                            <span class="faq-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                            <div class="faq-answer">O <strong>rejuvenescimento íntimo feminino</strong> reúne tratamentos que restauram a saúde e a estética da região íntima, melhorando flacidez vaginal, lubrificação, sensibilidade, libido, qualidade da pele e conforto durante as relações. Os protocolos podem incluir bioestimuladores de colágeno, preenchedores e tecnologias regenerativas — sempre de forma personalizada.</div>
+                        </div></div>
+                    </li>
+
+                    <li class="faq-item">
+                        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+                            <span class="faq-question">Como é garantida a minha privacidade?</span>
+                            <span class="faq-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                            <div class="faq-answer">Todo atendimento é realizado em <strong>consultório privativo</strong>, com agendamentos espaçados e ambiente discreto em Campo Grande, RJ. Sua intimidade, segurança e acolhimento são prioridades em cada etapa do tratamento.</div>
+                        </div></div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- BLOCO 2: CONSULTA E INVESTIMENTO -->
+            <div class="faq-subsection">
+                <div class="faq-subsection-title">Consulta, Agendamento & Investimento</div>
+                <ul class="faq-list">
+
+                    <li class="faq-item">
+                        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+                            <span class="faq-question">Como funciona a consulta de avaliação?</span>
+                            <span class="faq-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                            <div class="faq-answer">A consulta com a Dra. Paula é <strong>um momento só seu</strong>.<br><br>É onde você recebe um olhar completo para a sua saúde íntima e estética — algo que nenhuma informação solta na internet consegue substituir. Aqui você pode falar das suas queixas sem vergonha, tirar todas as dúvidas e finalmente entender o que está acontecendo com seu corpo.<br><br>A Dra. Paula avalia suas necessidades de forma individual, explica cada detalhe com calma e, juntas, vocês constroem o melhor plano terapêutico para recuperar sua autoestima, conforto e bem-estar.</div>
+                        </div></div>
+                    </li>
+
+                    <li class="faq-item">
+                        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+                            <span class="faq-question">A consulta de avaliação é paga?</span>
+                            <span class="faq-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                            <div class="faq-answer">Sim. A consulta de avaliação tem o valor de <strong>R$ 200,00</strong> e é um atendimento individualizado completo.<br><br>Durante esse encontro, a Dra. Paula realiza uma anamnese detalhada, avalia a região íntima, compreende suas queixas e objetivos e elabora um plano de tratamento totalmente personalizado — com todas as etapas e o investimento apresentados de forma clara e transparente.<br><br>Mais do que uma simples consulta, é um momento exclusivo para entender suas necessidades e definir o melhor caminho para recuperar sua autoestima, conforto e bem-estar íntimo.</div>
+                        </div></div>
+                    </li>
+
+                    <li class="faq-item">
+                        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+                            <span class="faq-question">Quanto custam os tratamentos?</span>
+                            <span class="faq-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                            <div class="faq-answer">Os valores variam de acordo com as necessidades de cada paciente e com o protocolo indicado após a avaliação. Dar um valor sem antes conhecer seu caso poderia gerar uma expectativa errada — e a Dra. Paula preza pela <strong>transparência total</strong>.<br><br>Na consulta, ela avalia sua anatomia, suas queixas e o que você deseja melhorar, e apresenta o plano de tratamento com todos os valores de forma clara, antes de qualquer decisão.</div>
+                        </div></div>
+                    </li>
+
+                    <li class="faq-item">
+                        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+                            <span class="faq-question">Posso agendar pelo WhatsApp?</span>
+                            <span class="faq-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                            <div class="faq-answer">Sim! Todo o atendimento inicial, esclarecimento de dúvidas e agendamento são feitos pelo <strong>WhatsApp</strong> de forma rápida e discreta. Clique no botão abaixo e fale diretamente com a equipe da Dra. Paula.</div>
+                        </div></div>
+                    </li>
+
+                    <li class="faq-item">
+                        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+                            <span class="faq-question">Onde fica o consultório e tem estacionamento?</span>
+                            <span class="faq-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                            <div class="faq-answer">O consultório está localizado no <strong>Edifício West Tower, em Campo Grande, Rio de Janeiro</strong> — de fácil acesso e com estacionamento gratuito disponível mediante agendamento com a Dra. Paula.</div>
+                        </div></div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- CTA FINAL -->
+            <div class="faq-cta-block">
+                <h4>Ficou com mais alguma dúvida?</h4>
+                <p>Fale diretamente com nossa equipe pelo WhatsApp. Atendimento rápido, discreto e sem compromisso.</p>
+                <div class="faq-cta-btns">
+                    <a href="https://wa.me/5521996628126?text=Olá%20Dra.%20Paula!%20Vi%20seu%20site%20e%20gostaria%20de%20agendar%20minha%20consulta." class="btn-faq-primary" onclick="trackWhatsAppClick();" target="_blank" rel="noopener noreferrer">🌸 Agendar minha consulta</a>
+                    <a href="https://wa.me/5521996628126?text=Olá!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20informações." class="btn-faq-outline" onclick="trackWhatsAppClick();" target="_blank" rel="noopener noreferrer">Quero mais informações</a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- wave: quase-preto (faq) → branco rosado (depoimentos) -->
+        <svg viewBox="0 0 1200 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:50px;margin-top:-2px;">
+            <path d="M0,0 L1200,0 C900,40 300,0 0,40 Z" fill="#1e1020"/>
+            <path d="M0,40 C300,0 900,40 1200,0 L1200,50 L0,50 Z" fill="#FFF9FA"/>
+        </svg>
+
         <section id="depoimentos" class="testimonials-section">
             <h2 class="services-main-title" style="color: var(--secondary-color);">Depoimentos</h2>
             <div class="testimonials-grid">
@@ -1055,6 +1470,21 @@
             }
         });
         return false;
+    }
+
+    function toggleFaq(btn) {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        // fecha todos os itens do mesmo bloco
+        btn.closest('.faq-list').querySelectorAll('.faq-item').forEach(function(i) {
+            i.classList.remove('open');
+            i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+        });
+        // abre o clicado se estava fechado
+        if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+        }
     }
 
     function toggleTreatment(btn) {
