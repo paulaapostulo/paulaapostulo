@@ -434,6 +434,30 @@
             padding-bottom: 15px;
         }
 
+        /* ── Imagens dos cards de serviço ── */
+        .card-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: block;
+            border: 1px solid rgba(197, 179, 88, 0.2);
+        }
+
+                /* Para a íntima — sobe o foco para o tronco */
+        .card-intima .card-img { object-position: center top; }
+
+        /* Para a facial — mantém centralizado no rosto */
+        .card-facial .card-img { object-position: center 20%; }
+
+        @media (max-width: 768px) {
+            .card-img {
+                height: 240px;
+            }
+        }
+
         .intima-highlight {
             background-color: var(--primary-color);
             color: var(--secondary-color);
@@ -973,7 +997,7 @@
             class="cta-header-gold">Agendar Consulta</a>
             <a href="https://instagram.com/paula.apostulo" target="_blank"
             onclick="return gtag_report_conversion('https://instagram.com/paula.apostulo');">
-                <img src="logo-instagram.jpg" alt="Instagram Dra. Paula Apóstulo" class="instagram-icon-top">
+                <img src="logo-instagram.png" alt="Instagram Dra. Paula Apóstulo" class="instagram-icon-top">
             </a>
         </div>
 
@@ -1034,6 +1058,11 @@
                 <!-- CARD: ESTÉTICA ÍNTIMA -->
                 <div class="service-card">
                     <h3 class="card-title">Estética Íntima Feminina</h3>
+
+                    <!-- Imagem Estética Íntima -->
+                    <img src="imagem-intima.jpg"
+                         alt="Estética Íntima Feminina em Campo Grande RJ — Dra. Paula Apóstulo"
+                         class="card-img">
 
                     <ul class="treatment-list treatment-list--detailed">
 
@@ -1105,6 +1134,11 @@
                 <!-- CARD: ESTÉTICA FACIAL -->
                 <div class="service-card">
                     <h3 class="card-title">Estética Facial</h3>
+
+                    <!-- Imagem Estética Facial — adicione o arquivo "imagem-facial.jpg" na raiz do repositório GitHub -->
+                    <img src="imagem-facial.jpg"
+                         alt="Estética Facial em Campo Grande RJ — Dra. Paula Apóstulo"
+                         class="card-img">
 
                     <ul class="treatment-list treatment-list--detailed">
 
